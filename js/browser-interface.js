@@ -1,13 +1,13 @@
 var addMarker = require("./../js/addmarker.js").addMarker;
 
-var map;
+var myMap;
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
+  myMap = new google.maps.Map(document.getElementById('map'), {
     //center: {lat: -34.397, lng: 150.644},
     zoom: 15,
     mapTypeId : google.maps.MapTypeId.ROADMAP
   });
-  var infoWindow = new google.maps.InfoWindow({map: map});
+  var infoWindow = new google.maps.InfoWindow({map: myMap});
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
@@ -19,13 +19,13 @@ function initMap() {
       infoWindow.setPosition(pos);
       infoWindow.setContent('Location found.');
       infoWindow.close();
-      map.setCenter(pos);
+      myMap.setCenter(pos);
     }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
+      handleLocationError(true, infoWindow, myMap.getCenter());
     });
   } else {
     // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
+    handleLocationError(false, infoWindow, myMap.getCenter());
   }
 }
 
@@ -41,6 +41,6 @@ $(document).ready(function() {
   $("#marker").click(function(e){
     e.preventDefault();
     var myLatLng = {lat: 45.51, lng: -122.59};
-    addMarker(map, 'Mt Tabor', myLatLng);
+    addMarker(myMap, 'Mt Tabor', myLatLng);
   });
 });

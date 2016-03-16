@@ -1,15 +1,15 @@
-exports.addMarker = function(map, description, point) {
-
+exports.addMarker = function(thisMap, description, point) {
+  console.log(thisMap);
   var info = new google.maps.InfoWindow({
     content: description,
     maxWidth: 200
   });
   var marker = new google.maps.Marker({
     position: point,
-    map: map,
+    map: thisMap,
     title: "Success!"
   });
   marker.addListener('click', function() {
-    info.open(map, marker);
+    info.open(thisMap, marker);
   });
 };
