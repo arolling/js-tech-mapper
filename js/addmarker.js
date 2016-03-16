@@ -1,11 +1,11 @@
-exports.addMarker = function(map, description) {
-  var myLatLng = {lat: 45.51, lng: -122.59};
+exports.addMarker = function(map, description, point) {
+
   var info = new google.maps.InfoWindow({
     content: description,
-    maxWidth: 100
+    maxWidth: 200
   });
   var marker = new google.maps.Marker({
-    position: myLatLng,
+    position: point,
     map: map,
     title: "Success!"
   });

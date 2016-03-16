@@ -3,8 +3,8 @@ var addMarker = require("./../js/addmarker.js").addMarker;
 var map;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 12,
+    //center: {lat: -34.397, lng: 150.644},
+    zoom: 15,
     mapTypeId : google.maps.MapTypeId.ROADMAP
   });
   var infoWindow = new google.maps.InfoWindow({map: map});
@@ -40,6 +40,7 @@ $(document).ready(function() {
   initMap();
   $("#marker").click(function(e){
     e.preventDefault();
-    addMarker(map, 'Mt Tabor');
+    var myLatLng = {lat: 45.51, lng: -122.59};
+    addMarker(map, 'Mt Tabor', myLatLng);
   });
 });
