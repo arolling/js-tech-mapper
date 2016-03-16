@@ -1,3 +1,5 @@
+var addMarker = require("./../js/addmarker.js").addMarker;
+
 var map;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -34,4 +36,8 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 $(document).ready(function() {
   initMap();
+  $("#marker").click(function(e){
+    e.preventDefault();
+    addMarker(map);
+  });
 });

@@ -1,0 +1,6 @@
+marker icons
+info windows
+glyphs?
+parse atom feed calagator
+find nearest meetup
+directions
