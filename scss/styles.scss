@@ -4,6 +4,14 @@ html, body {
   padding: 0;
 }
 
+@media (min-width: 1200px) {
+  .container {
+      width: 1500px;
+  }
+}
+
+
 #map {
-  height: 60%;
+  position: relative;
+  height: 800px;
 }

@@ -16,24 +16,30 @@
     <title></title>
   </head>
   <body>
-    <div id="map"></div>
     <div class="container">
-      <button type="button" id="marker" class="btn btn-primary" name="button">Add Marker</button>
-      <hr>
-      <h1>Parse me</h1>
-      <button type="button" id="feedMe" class="btn btn-warning" name="button">Feed Me</button>
-      <hr>
-      <table class="table">
-        <thead>
-          <th>Meeting Title</th>
-          <th>Start Time</th>
-          <th>Coordinates</th>
-          <th>Link</th>
-        </thead>
-        <tbody id="feed">
+      <div class="row">
+        <div class="col-md-4">
+          <button type="button" id="marker" class="btn btn-primary" name="button">Add Marker</button>
+          <hr>
+          <h1>Parse me</h1>
+          <button type="button" id="feedMe" class="btn btn-warning" name="button">Feed Me</button>
+          <hr>
+          <table class="table">
+            <thead>
+              <th>Meeting Title</th>
+              <th>Start Time</th>
+              <th>Coordinates</th>
+              <th>Link</th>
+            </thead>
+            <tbody id="feed">
 
-        </tbody>
-      </table>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-8">
+          <div id="map"></div>
+        </div>
+      </div>
     </div>
 
   </body>

@@ -5,12 +5,4 @@ glyphs?
 find nearest meetup
 directions
 relative time
-
-2016-03-16T08:30:00-07:00
-
-str split(' ' ) -> array [str1, str2]
-
-var thispoint = {
-  lat: array[0].tofloat,
-  lng: array[1].tofloat
-}
+show cross streets - dynamically google api?
