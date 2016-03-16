@@ -20,6 +20,8 @@ var lib = require('bower-files')({
   }
 });
 var browserSync = require('browser-sync').create();
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('bowerJS', function(){
   return gulp.src(lib.ext('js').files)
