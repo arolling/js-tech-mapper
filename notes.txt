@@ -1,5 +1,5 @@
 marker icons
-info windows
+++info windows
 glyphs?
 parse atom feed calagator
 find nearest meetup
