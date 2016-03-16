@@ -38,6 +38,6 @@ $(document).ready(function() {
   initMap();
   $("#marker").click(function(e){
     e.preventDefault();
-    addMarker(map);
+    addMarker(map, 'Mt Tabor');
   });
 });
