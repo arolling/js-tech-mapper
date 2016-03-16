@@ -1,6 +1,9 @@
 marker icons
 ++info windows
 glyphs?
-parse atom feed calagator
+++parse atom feed calagator
 find nearest meetup
 directions
+relative time
+
+2016-03-16T08:30:00-07:00
