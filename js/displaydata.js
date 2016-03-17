@@ -24,7 +24,6 @@ exports.displayData = function(data, dataMap, day) {
       if(coordinates !== undefined){
         eventLocation.addEventListener('click', function(e) {
           var id = parseInt(e.target.getAttribute('id'));
-          console.log(feed[id]);
           addMarker(dataMap, feed[id], parseLocation(feed[id].point));
         });
       }

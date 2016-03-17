@@ -1,8 +1,5 @@
 exports.parseLocation = function(point) {
   coordArray = (point).split(' ');
-  var location = {
-    lat: parseFloat(coordArray[0]),
-    lng: parseFloat(coordArray[1])
-  };
+  var location = new google.maps.LatLng(parseFloat(coordArray[0]), parseFloat(coordArray[1]));
   return location;
 };
