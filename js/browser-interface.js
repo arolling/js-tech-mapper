@@ -16,9 +16,8 @@ $(document).ready(function() {
     geoLocation(myMap);
   });
 
-  $("#marker").click(function(e){
+  $(".directions").on("click", function(e){
     e.preventDefault();
-    var myLatLng = {lat: 45.51, lng: -122.59};
-    addMarker(myMap, 'Mt Tabor', myLatLng);
+    alert("You clicked");
   });
 });

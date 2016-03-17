@@ -1,5 +1,5 @@
 var addMarker = require("./../js/addmarker.js").addMarker;
-
+var parseLocation = require("./../js/parseLocation.js").parseLocation;
 exports.displayData = function(data, dataMap, day) {
   $("#feed").empty();
   var feed = data.query.results.entry; //this is an array
@@ -24,18 +24,10 @@ exports.displayData = function(data, dataMap, day) {
       if(coordinates !== undefined){
         eventLocation.addEventListener('click', function(e) {
           var id = parseInt(e.target.getAttribute('id'));
-          addMarker(dataMap, feed[id].title, parseLocation(feed[id].point));
+          console.log(feed[id]);
+          addMarker(dataMap, feed[id], parseLocation(feed[id].point));
         });
       }
     }
   }
-};
-
-var parseLocation = function(point) {
-  coordArray = (point).split(' ');
-  var location = {
-    lat: parseFloat(coordArray[0]),
-    lng: parseFloat(coordArray[1])
-  };
-  return location;
 };

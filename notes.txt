@@ -4,7 +4,7 @@ glyphs?
 ++parse atom feed calagator
 find nearest meetup
 directions
-relative time
-show cross streets - dynamically google api?
+++relative time
+
 
 https://developer.yahoo.com/yql/
