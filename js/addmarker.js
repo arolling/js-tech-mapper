@@ -12,4 +12,5 @@ exports.addMarker = function(thisMap, description, point) {
   marker.addListener('click', function() {
     info.open(thisMap, marker);
   });
+  thisMap.setCenter(point);
 };

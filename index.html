@@ -16,11 +16,15 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-md-4">
-          <button type="button" id="marker" class="btn btn-primary" name="button">Add Marker</button>
-          <hr>
-          <h1>Parse me</h1>
-          <button type="button" id="feedMe" class="btn btn-warning" name="button">Feed Me</button>
+        <div class="col-md-5">
+          <nav>
+          <ul class="pager">
+            <li><a href="#" id="prev">Previous</a></li>
+            <li><a href="#" id="next">Next</a></li>
+          </ul>
+        </nav>
+          <button type="button" id="feedMe" class="btn btn-warning" name="button">Display All</button>
+          <h4 id="success"></h4>
           <hr>
           <table class="table">
             <thead>
@@ -34,7 +38,7 @@
             </tbody>
           </table>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-7">
           <div id="map"></div>
         </div>
       </div>
