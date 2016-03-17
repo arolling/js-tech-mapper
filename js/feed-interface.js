@@ -8,16 +8,21 @@ var queryAll = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20
 
 $(document).ready(function(){
   var day = moment();
-  var rss = $.get(queryAll).fail(function(error) {
-    $("#success").text(error.responseJSON.message);
+
+  var rss = $.get(queryAll).error(function() {
+    $("#success").text("failed");
   });
-  rss.done(function(data) {
+
+  rss.then(function(data) {
     $("#success").text( "done success" );
     displayData(data, myMap, day);
   });
 
   $("#next").click(function(){
     rss.done(function(data) {
+      if (day.diff(moment(), "days") === 0) {
+        $(".previous").removeClass("disabled");
+      }
       console.log(day);
       displayData(data, myMap, day.add(1, 'days'));
       $("#success").text("Day" + day.calendar());
@@ -29,6 +34,9 @@ $(document).ready(function(){
       console.log(day);
       displayData(data, myMap, day.subtract(1, 'days'));
       $("#success").text("Day" + day.calendar());
+      if (moment().toObject().date === day.toObject().date && moment().toObject().months === day.toObject().months) {
+        $(".previous").addClass("disabled");
+      }
     });
   });
 
