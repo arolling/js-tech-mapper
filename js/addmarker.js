@@ -2,6 +2,8 @@ var getDirections = require("./../js/getDirections.js").getDirections;
 
 exports.addMarker = function(thisMap, meeting, point) {
   var displayInfo = '<h4>' + meeting.title + '</h4>' +
+              '<label>Enter Address</label>' +
+              '<input class="form-control" type="text" id="address"><hr>' +
               '<button class="btn btn-default btn-xs directions" value="' + meeting.point + '">Get Directions</button>';
   var info = new google.maps.InfoWindow({
     content: displayInfo,
@@ -17,8 +19,8 @@ exports.addMarker = function(thisMap, meeting, point) {
     var buttonClick = document.querySelector('button[value="' + meeting.point + '"]');
     buttonClick.addEventListener('click', function(e) {
       e.preventDefault();
-      //alert("it works!");
-      getDirections($(this).val(), thisMap);
+      var address = $("#address").val();
+      getDirections($(this).val(), address, thisMap);
     });
   });
   thisMap.setCenter(point);
